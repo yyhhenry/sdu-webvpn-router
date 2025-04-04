@@ -17,10 +17,10 @@ function main(): void {
   // Listen for Ctrl+ArrowRight hotkey
   // If the input value is valid absolute URL, open it with click on `< a>` element
   // WebVPN will handle the URL with LAN
-  inputElement.addEventListener("keydown", (event) => {
+  window.addEventListener("keydown", (event) => {
     if (event.ctrlKey && event.key === "ArrowRight") {
       const value = inputElement.value;
-      if (isURL(value, {})) {
+      if (isURL(value)) {
         const aElement = document.createElement("a");
         aElement.href = value;
         aElement.target = "_blank";
@@ -28,9 +28,18 @@ function main(): void {
 
         event.preventDefault();
         event.stopPropagation();
+      } else {
+        console.warn("Invalid URL:", value);
+        alert("Please enter a valid URL.");
+
+        inputElement.value = "";
+        inputElement.focus();
       }
     }
   });
+
+  inputElement.placeholder = "Ctrl + → to open URL";
+  console.log("sdu-webvpn-router: Type a URL and press Ctrl + → to open it.");
 }
 
 main();
