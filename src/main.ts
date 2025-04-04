@@ -1,16 +1,11 @@
 import isURL from "validator/lib/isURL";
-function getInputElement(): HTMLInputElement | undefined {
-  return (
-    document.querySelector<HTMLInputElement>(
-      "div.homepage-search-content input#sdu_search_input.search-input",
-    ) ?? undefined
-  );
-}
 
 function main(): void {
-  const inputElement = getInputElement();
+  const inputElement = document.querySelector<HTMLInputElement>(
+    "div.homepage-search-content input#sdu_search_input.search-input",
+  );
   if (!inputElement) {
-    // Not on the target page
+    console.warn("sdu-webvpn-router: Not on the target page.");
     return;
   }
 
