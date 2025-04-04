@@ -14,11 +14,11 @@ function main(): void {
     return;
   }
 
-  // Listen for Ctrl+Enter hotkey
+  // Listen for Ctrl+ArrowRight hotkey
   // If the input value is valid absolute URL, open it with click on `< a>` element
   // WebVPN will handle the URL with LAN
   inputElement.addEventListener("keydown", (event) => {
-    if (event.ctrlKey && event.key === "Enter") {
+    if (event.ctrlKey && event.key === "ArrowRight") {
       const value = inputElement.value;
       if (isURL(value, {})) {
         const aElement = document.createElement("a");
