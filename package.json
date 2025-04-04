@@ -1,0 +1,25 @@
+{
+  "name": "sdu-webvpn-router",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "山东大学WebVPN界面自由导航",
+  "author": {
+    "name": "yyhhenry",
+    "email": "yyhhenry@foxmail.com"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit --skipLibCheck --strict"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/validator": "^13.12.3",
+    "esbuild": "^0.25.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "validator": "^13.15.0"
+  }
+}
