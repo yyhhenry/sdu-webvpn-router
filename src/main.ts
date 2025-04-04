@@ -7,8 +7,9 @@ function main(ttl: number = 3): void {
   if (!inputElement) {
     if (ttl > 0) {
       setTimeout(() => main(ttl - 1), 1000);
+    } else {
+      console.warn("sdu-webvpn-router: Not on the target page.");
     }
-    console.warn("sdu-webvpn-router: Not on the target page.");
     return;
   }
 
