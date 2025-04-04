@@ -1,10 +1,13 @@
 import isURL from "validator/lib/isURL";
 
-function main(): void {
+function main(ttl: number = 3): void {
   const inputElement = document.querySelector<HTMLInputElement>(
     "div.homepage-search-content input#sdu_search_input.search-input",
   );
   if (!inputElement) {
+    if (ttl > 0) {
+      setTimeout(() => main(ttl - 1), 1000);
+    }
     console.warn("sdu-webvpn-router: Not on the target page.");
     return;
   }
