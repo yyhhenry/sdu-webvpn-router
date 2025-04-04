@@ -1,6 +1,6 @@
 {
   "name": "sdu-webvpn-router",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "module",
   "private": true,
   "description": "山东大学WebVPN界面自由导航",
